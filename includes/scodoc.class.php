@@ -75,8 +75,8 @@ class Scodoc{
 		global $Config;
 		global $path;
 		$scodoc_url = $Config->scodoc_url;
-		if($dept) {
-            $scodoc_url .= '/'.$dept;
+		if($dept || $Config->scodoc_dept) {
+            $scodoc_url .= '/'.($dept ?: $Config->scodoc_dept);
 		}
 		$data = http_build_query($options);
 	
@@ -162,6 +162,9 @@ class Scodoc{
 
 	*******************************/
 	public function getDepartmentsList(){
+		global $Config;
+		if ($Config->scodoc_dept) return [['code' => $Config->scodoc_dept, 'nom' => 'Département '.$Config->scodoc_dept]];
+		
 		$data = json_decode($this->Ask_Scodoc('departements'));
 
 		if($data != ''){
@@ -323,7 +326,13 @@ class Scodoc{
 
 	*******************************/
 	public function getDepartmentSemesters($dep){
-		$json = json_decode($this->Ask_Scodoc('departement/' . $dep . '/formsemestres_courants'));
+		global $Config;
+
+		if ($Config->scodoc_dept) {
+			$json = json_decode($this->Ask_Scodoc('formsemestres/query', ['annee_scolaire' => (date("m") < 8) ? (date("Y") - 1) : date("Y")]));
+		} else {
+			$json = json_decode($this->Ask_Scodoc('departement/' . $dep . '/formsemestres_courants'));
+		}
 
 		$output = [];
 		foreach($json as $value){

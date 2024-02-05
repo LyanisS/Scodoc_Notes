@@ -161,10 +161,12 @@
 		echo '<div><span>✔️</span> L\'authentification auprès de Scodoc a réussi.</div>';
 
 		/* Récupération de données Scodoc */
-		echo '<div><span>💭</span> Essai de récupération de données scodoc, vous devriez voir apparaître la liste des départements:</div>';
+		if (!$Config->scodoc_dept) {
+			echo '<div><span>💭</span> Essai de récupération de données scodoc, vous devriez voir apparaître la liste des départements:</div>';
 
-		echo '<div><b><pre>' . json_encode($Scodoc->getDepartmentsList(), JSON_PRETTY_PRINT) . '<pre></b></div>';
-
+			echo '<div><b><pre>' . json_encode($Scodoc->getDepartmentsList(), JSON_PRETTY_PRINT) . '<pre></b></div>';
+		}
+		// TODO: Tester avec une méthode différente la récupération de données dans le cas où la passerelle est configuré en mode mono-département
 		/*******************/
 		echo '<div><span>💭</span> Une option Scodoc permet de choisir de diffuser ou non les relevés pour chaque département.</div>';
 

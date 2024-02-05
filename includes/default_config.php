@@ -129,6 +129,7 @@
 		$Config->scodoc_url = Config::$scodoc_url;	// ⚠️⚠️⚠️ Attention, il doit y avoir /Scodoc à la fin	
 		$Config->scodoc_login = Config::$scodoc_login;
 		$Config->scodoc_psw = Config::$scodoc_psw;
+		$Config->scodoc_dept = Config::$scodoc_dept ?? false;
 
 /********************************************/
 /* OU accès à un autre système de données   */

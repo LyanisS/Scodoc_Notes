@@ -77,6 +77,7 @@
 		public static $scodoc_url = 'https://iutmscodoc9.uha.fr/ScoDoc';	// Attention, il doit y avoir /Scodoc à la fin	
 		public static $scodoc_login = 'LOGIN_SCODOC';
 		public static $scodoc_psw = 'MDP_SCODOC';
+		//public static $scodoc_dept = 'DEPT_ACRONYME';	// à utiliser dans le cas où l'accès est limité à un seul département (non recommandé)
 		
 /*****************************************************/
 /* Configuration du format des ID et Nom des comptes */ 
