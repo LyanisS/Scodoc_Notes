@@ -3,7 +3,7 @@
 	header('Access-Control-Allow-Credentials: true');
 	header('Access-Control-Allow-Headers: Authorization');
 	
-	$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+	$path = realpath(dirname(__FILE__) . '/../..');
 	$dir = $path . '/data/analytics/';
 	$file = $dir . 'othersData.json';
 	

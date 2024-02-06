@@ -11,7 +11,7 @@
       define ("NL", "\n");
   }
   else {
-      $path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');    // Exécution par serveur web
+      $path = realpath(dirname(__FILE__) . '/..');    // Exécution par serveur web
       define ("NL", "<br>");
   }
 

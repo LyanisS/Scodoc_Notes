@@ -55,7 +55,7 @@
 	<h1>Diagnostique de la passerelle</h1>
 	<h2>Configuration du serveur</h2>
 	<?php
-		$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+		$path = realpath(dirname(__FILE__) . '/../..');
 		
 	/******************/
 	/* Version de PHP */

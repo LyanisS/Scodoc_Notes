@@ -1,6 +1,6 @@
 <?php 
 
-$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+$path = realpath(dirname(__FILE__) . '/..');
 include_once "$path/includes/default_config.php";
 
 class Scodoc{

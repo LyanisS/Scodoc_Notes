@@ -1,7 +1,7 @@
 <?php 
 	header('Content-type:application/json');
 
-	$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+	$path = realpath(dirname(__FILE__) . '/../..');
 	include_once "$path/includes/default_config.php";
 
 	error_reporting(E_ALL);

@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Photo de profil</title>
 	<style>
-		<?php include $_SERVER['DOCUMENT_ROOT']."/assets/styles/global.css"?>
+		<?php include dirname(__FILE__) . "/assets/styles/global.css"?>
 
 		body{
 			font-family: arial;

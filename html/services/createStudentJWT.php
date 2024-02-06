@@ -5,7 +5,7 @@
 /* https://github.com/firebase/php-jwt */
 /***************************************/
 
-	$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+	$path = realpath(dirname(__FILE__) . '/../..');
 	
 	include_once "$path/includes/default_config.php";
 
@@ -52,7 +52,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Jeton d'accès</title>
 	<style>
-		<?php include $_SERVER['DOCUMENT_ROOT']."/assets/styles/global.css"?>
+		<?php include realpath(dirname(__FILE__) . "/..") . "/assets/styles/global.css"?>
 		.jeton {
 			background: #fff;
 			color: #000;

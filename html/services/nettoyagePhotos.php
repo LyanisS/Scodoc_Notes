@@ -1,5 +1,5 @@
 <?php 
-	$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+	$path = realpath(dirname(__FILE__) . '/../..');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Nettoyage Photos</title>
 	<style>
-        <?php include $_SERVER['DOCUMENT_ROOT']."/assets/styles/global.css"?>
+        <?php include realpath(dirname(__FILE__) . "/..") . "/assets/styles/global.css"?>
 		button {
 			border: none;
 			border-radius: 4px;
@@ -51,7 +51,7 @@
 <body>
 	<?php 
         $h1 = 'Nettoyage photos';
-        include $_SERVER['DOCUMENT_ROOT']."/assets/header.php";
+        include realpath(dirname(__FILE__) . "/..") . "/assets/header.php";
     ?>
 
 	<main>

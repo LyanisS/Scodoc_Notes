@@ -9,7 +9,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="prism/prism.css">
 	<style>
-		<?php include $_SERVER['DOCUMENT_ROOT']."/assets/styles/global.css"?>
+		<?php include realpath(dirname(__FILE__) . "/..") . "/assets/styles/global.css"?>
 		
 		body{
 			font-family: arial;
@@ -369,7 +369,7 @@ function fetchData(query){
 	</script>
 	<script src="prism/prism.js"></script>
 	<?php 
-        $path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+        $path = realpath(dirname(__FILE__) . '/../..');
         include "$path/config/analytics.php";
     ?>
 </body>

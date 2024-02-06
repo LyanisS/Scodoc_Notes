@@ -1,5 +1,5 @@
 <?php
-  $path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+  $path = realpath(dirname(__FILE__) . '/../..');
   include_once "$path/includes/default_config.php";
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Administration</title>
 	<style>
-		<?php include $_SERVER['DOCUMENT_ROOT']."/assets/styles/global.css"?>
+		<?php include realpath(dirname(__FILE__) . "/..") . "/assets/styles/global.css"?>
 		label p{
 			margin-top: 0;
 		}
@@ -110,7 +110,7 @@
 <body>
 	<?php 
     	$h1 = 'Configuration';
-    	include $_SERVER['DOCUMENT_ROOT']."/assets/header.php";
+    	include realpath(dirname(__FILE__) . "/..") . "/assets/header.php";
   	?>
 	<main>
 		<p>

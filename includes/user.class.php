@@ -34,7 +34,7 @@
 	/****************/
 		public function __construct(){
 			global $Config;
-			$this->path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+			$this->path = realpath(dirname(__FILE__) . '/..');
 
 			$header = apache_request_headers()['Authorization'] ?? "";
 			preg_match('/Bearer\s((.*)\.(.*)\.(.*))/', $header, $token);

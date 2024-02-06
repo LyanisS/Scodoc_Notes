@@ -1,5 +1,5 @@
 <?php 
-    $path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+    $path = realpath(dirname(__FILE__) . '/../..');
 	require_once "$path/includes/default_config.php";
 	require_once "$path/includes/analytics.class.php";
 	Analytics::add('documents');
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documents</title>
     <style>
-        <?php include $_SERVER['DOCUMENT_ROOT']."/assets/styles/global.css"?>
+        <?php include realpath(dirname(__FILE__) . "/..") . "/assets/styles/global.css"?>
         main{
             margin: 0 auto 20px auto;
         }
@@ -169,7 +169,7 @@
 <body>		
     <?php 
 		$h1 = 'Documents';
-		include $_SERVER['DOCUMENT_ROOT']."/assets/header.php";
+		include realpath(dirname(__FILE__) . "/..") . "/assets/header.php";
 	?>
     <main>
         <p>

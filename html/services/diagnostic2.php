@@ -55,7 +55,7 @@
 	<h1>Diagnostique de la passerelle - page 2</h1>
 	<h2>CAS</h2>
 	<?php
-		$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+		$path = realpath(dirname(__FILE__) . '/../..');
 		error_reporting(E_ALL);
 		ini_set('display_errors', '1');
 	/********************/

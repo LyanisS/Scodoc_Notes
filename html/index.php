@@ -1,5 +1,5 @@
 <?php 
-	$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+	$path = realpath(dirname(__FILE__) . '/..');
 	include_once "$path/includes/default_config.php";
 ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 		<meta name="theme-color" content="#0084b0">
 		<link rel="apple-touch-icon" href="images/icons/192x192.png">
 		<style>
-			<?php include $_SERVER['DOCUMENT_ROOT']."/assets/styles/global.css"?>
+			<?php include dirname(__FILE__) . "/assets/styles/global.css"?>
 /**********************/
 /* Gestion de semestres */
 /**********************/
@@ -226,7 +226,7 @@
 	<body>
 		<?php 
 			$h1 = 'Relevé de notes';
-			include $_SERVER['DOCUMENT_ROOT']."/assets/header.php";
+			include dirname(__FILE__) . "/assets/header.php";
 		?>
 		<main>
 			<a href="avatar.php" aria-label="Changer la photo">

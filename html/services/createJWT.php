@@ -4,7 +4,7 @@
 /* https://github.com/firebase/php-jwt */
 /***************************************/
 
-	$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+	$path = realpath(dirname(__FILE__) . '/../..');
 
 	include_once "$path/includes/default_config.php";
 	include_once "$path/includes/user.class.php";

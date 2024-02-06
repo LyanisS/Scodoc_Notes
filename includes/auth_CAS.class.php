@@ -17,7 +17,7 @@
 	/* Authentification par le CAS */
 	/*******************************/
 		public static function defaultAuth(){
-			$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+			$path = realpath(dirname(__FILE__) . '/..');
 
 			require_once $path . '/lib/CAS/CAS.php';
 			require_once $path . '/config/cas_config.php';
@@ -55,7 +55,7 @@
 	// Contenu de la page html/services/doAuth.php
 	// Cette page permet de mettre en place le cookie d'authentification
 		public static function doAuth(){
-			$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+			$path = realpath(dirname(__FILE__) . '/..');
 
 			require_once $path . '/lib/CAS/CAS.php';
 			require_once $path . '/config/cas_config.php';
@@ -93,7 +93,7 @@
 	// Permet de supprimer l'authentification de l'utilisateur
 		public static function logout(){
 			$_SESSION = array();
-			$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+			$path = realpath(dirname(__FILE__) . '/..');
 			require_once $path . '/lib/CAS/CAS.php';
 			require_once $path . '/config/cas_config.php';
 			$client_service_name = "https://$_SERVER[HTTP_HOST]";

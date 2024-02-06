@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Mises à jour</title>
 	<style>
-		<?php include $_SERVER['DOCUMENT_ROOT']."/assets/styles/global.css"?>
+		<?php include dirname(__FILE__) . "/assets/styles/global.css"?>
 		body{
 			margin:0;
 			font-family:arial;
@@ -527,7 +527,7 @@ chmod 744 installOrUpdate.sh
 	</main>
 	<script src="assets/js/theme.js"></script>
 	<?php 
-		$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+		$path = realpath(dirname(__FILE__) . '/..');
 		include "$path/config/analytics.php";
 	?>
 </body>

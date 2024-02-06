@@ -1,6 +1,6 @@
 <?php
 	if(!isset($path) && $path != ''){
-		$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+		$path = realpath(dirname(__FILE__) . '/..');
 	}	
 	include_once $path.'/config/config.php';
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Fréquentation</title>
 	<style>
-		<?php include $_SERVER['DOCUMENT_ROOT']."/assets/styles/global.css"?>
+		<?php include realpath(dirname(__FILE__) . "/..") . "/assets/styles/global.css"?>
 		body{
 			padding: 32px 64px;
 			max-width: 1200px;
@@ -107,7 +107,7 @@
 	<script>
 
 		<?php
-			$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+			$path = realpath(dirname(__FILE__) . '/../..');
 			include "$path/includes/clientIO.php";
 		?>
 

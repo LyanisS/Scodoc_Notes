@@ -11,7 +11,7 @@ Authentification en cours ...
 	error_reporting(E_ALL);
 	ini_set('display_errors', '1');
 
-	$path = realpath($_SERVER['DOCUMENT_ROOT'] . '/..');
+	$path = realpath(dirname(__FILE__) . '/../..');
 	require_once $path.'/includes/default_config.php';
 	
 	/* CAS config */
