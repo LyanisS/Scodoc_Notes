@@ -41,7 +41,7 @@
 		'exp' => time() + $duree_de_validite
 	];
 
-	$root_url = (isset($_SERVER["https"]) ? "https://" : "http://" ). $_SERVER["HTTP_HOST"];
+	$root_url = (isset($_SERVER["https"]) ? "https://" : "http://" ). $_SERVER["HTTP_HOST"] . $Config->base_path;
 	$token_url = $root_url."?token=".JWT::encode($payload, $Config->JWT_key);
 ?>
 

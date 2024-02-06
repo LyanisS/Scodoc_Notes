@@ -131,17 +131,17 @@
 		<!-- ------- -->
 			<details class=outils>
 				<summary>Outils</summary>
-				<div><a href="/services/diagnostic.php">Diagnostic de la passerelle</a></div>
+				<div><a href="../services/diagnostic.php">Diagnostic de la passerelle</a></div>
 				<div>
-					<a href="/services/analytics.php">Analyse du trafic</a>
+					<a href="../services/analytics.php">Analyse du trafic</a>
 					<p>Si l'option est activée dans la section "Serveur".</p>
 				</div>
 				<div>
-					<a href="/services/createJWT.php">Création de jetons JWT d'accès</a>
+					<a href="../services/createJWT.php">Création de jetons JWT d'accès</a>
 					<p> Nécessite la configuration d'une clé JWT dans /config/config.php - Nécessite de modifier le fichier html/services/createJWT.php "à la main".</p>
 				</div>
 				<div>
-					<a href="/services/nettoyagePhotos.php">Nettoyage photos</a>
+					<a href="../services/nettoyagePhotos.php">Nettoyage photos</a>
 					<p>Supprime automatiquement les photos étudiants de la passerelle pour les étudiants qui n'ont pas été inscrits dans Scodoc depuis plus d'un an.</p>
 				</div>
 			</details>
@@ -163,7 +163,7 @@
 						<input type="checkbox" name="analystics_interne">
 						<b>Sauvegarde des données de connexion</b>
 						<p>
-							Système interne à la passerelle pour l'analyse du trafic compatible RGPD, les données sont visibles dans ce <a href="/services/analytics.php">tableau de bord</a>. 
+							Système interne à la passerelle pour l'analyse du trafic compatible RGPD, les données sont visibles dans ce <a href="../services/analytics.php">tableau de bord</a>. 
 						</p>
 					</label>
 
@@ -262,7 +262,7 @@
 			<details>
 				<summary>Onglet Comptes</summary>
 				<div>
-					<img src="/images/comptes.png" alt="Compte">
+					<img src="../images/comptes.png" alt="Compte">
 
 					<h3>Zone Nom Prénom</h3>
 					<label>

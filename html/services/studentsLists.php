@@ -323,7 +323,7 @@
 			etudiant.forEach(etudiant=>{
 				let groupes = etudiant.groupes.join(" / ") || "Groupe1";
 				output += `
-					<a href="/?ask_student=${etudiant.nip}"
+					<a href="../?ask_student=${etudiant.nip}"
                         data-nom="${etudiant.nom}" 
                         data-prenom="${etudiant.prenom}" 
                         data-groupe="${groupes}"

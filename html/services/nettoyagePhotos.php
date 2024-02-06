@@ -1,5 +1,6 @@
 <?php 
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include "$path/includes/default_config.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -62,6 +62,7 @@
 	/* CAS */
 	/********************/
 		include_once "$path/config/cas_config.php";
+		include_once "$path/includes/default_config.php";
 
 		echo "<div><span>💭</span><div>L'authentification au CAS renvoie :<br><br>";
 
@@ -69,7 +70,7 @@
 		require_once $path . '/config/cas_config.php';
 
 		// Initialize phpCAS
-		$client_service_name = "https://$_SERVER[HTTP_HOST]";
+		$client_service_name = "https://" . $_SERVER['HTTP_HOST'] . $Config->base_path;
 		phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context, $client_service_name);
 		if($cas_server_ca_cert_path != '') {
 			phpCAS::setCasServerCACert($cas_server_ca_cert_path);
@@ -82,10 +83,10 @@
 			echo '<b>'.phpCAS::getUser().'</b>';
 
 		}else{
-			echo "<b>*** Vous n'êtes pas authentifié ***</b> => <a href=/services/doAuth.php?href=https://".$_SERVER['HTTP_HOST'].">Authentification</a><br><br>";
+			echo "<b>*** Vous n'êtes pas authentifié ***</b> => <a href=../services/doAuth.php?href=https://".$client_service_name.">Authentification</a><br><br>";
 		}
 
-		echo '<br><br>Pour plus de tests sur le CAS, allez sur cette page <a href="/code_test/testCAS.php?-no-sw">Test CAS</a><br><br>';
+		echo '<br><br>Pour plus de tests sur le CAS, allez sur cette page <a href="../code_test/testCAS.php?-no-sw">Test CAS</a><br><br>';
 
 		include_once "$path/includes/default_config.php";
 

@@ -8,8 +8,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
 		<title>Relevé de notes</title>
+		<script>var BASE_PATH = "<?= $Config->base_path ?>";</script>
 		<link rel="manifest" href="manifest.json">
-		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<meta name="theme-color" content="#0084b0">
 		<link rel="apple-touch-icon" href="images/icons/192x192.png">
 		<style>
@@ -396,7 +397,7 @@
 				}
 
 				if(statut >= 20){
-					let url = window.location.origin + "/?ask_student=" + nip;
+					let url = window.location.origin + "<?= $Config->base_path ?>?ask_student=" + nip;
 					let div = document.createElement("div");
 					div.innerHTML = `<div style="width:100%; margin: 8px;">Lien pour accéder directement aux relevés : <a href=${url}>${url}</a></div>`;
 					output.appendChild(div);

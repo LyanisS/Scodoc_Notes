@@ -22,7 +22,7 @@
 	include $path . '/lib/JWT/JWT.php';
 
 	$exp = time() + 7 * 3600 * 24 ; // today + 7 days
-    $root_url = (isset($_SERVER["https"]) ? "https://" : "http://" ). $_SERVER["HTTP_HOST"];
+    $root_url = (isset($_SERVER["https"]) ? "https://" : "http://" ). $_SERVER["HTTP_HOST"] . $Config->base_path;
 	$payload = [
 		'id' => 'sebastien.lehmann@uha.fr', // nip, ou idCAS, si la personne n'a pas de nip
 		'idCAS' => 'sebastien.lehmann@uha.fr',
