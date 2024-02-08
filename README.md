@@ -146,6 +146,15 @@ Il est à minima nécessaire de configurer :
   - config.php 
   
 Il est recommandé d'avoir un super-administrateur en incluant son identifiant CAS dans le fichier /data/annuaires/super_admin.txt (enlevez le _DEMO).
+
+#### Mode mono-département (non-recommandé)
+> ⚠️ Cette configuration n'est pas recommandée, certaines fonctionnalités de la passerelle peuvent être indisponibles.  
+> Si possible, il est recommandé d'utiliser un compte Scodoc avec accès à tous les départements.
+
+Il est possible de configurer la passerelle pour qu'elle utilise un compte Scodoc qui n'a accès qu'à un seul département.  
+Pour cela, décommentez et complétez la ligne `public static $scodoc_dept = 'DEPT_ACRONYME';` dans le fichier `/config/config.php`.
+La valeur de cette variable doit être l'acronyme du département, vous pouvez le trouver dans l'URL de Scodoc. Par exemple dans l'URL
+`https://scodoc.moniut.tld/ScoDoc/Info/Scolarite/index_html`, l'acronyme est `Info`.
   
 ### Configuration de l'authentification : CAS
 Complétez cas_config.php.  
