@@ -56,6 +56,8 @@
 	<h2>Configuration du serveur</h2>
 	<?php
 		$path = realpath(dirname(__FILE__) . '/../..');
+		include_once "$path/includes/base_path.php";
+		base_path("services/diagnostic.php");
 		
 	/******************/
 	/* Version de PHP */
@@ -119,7 +121,7 @@
 			echo "<div><span>💭</span> Vérifiez que c'est bien le CAS de votre université <a href=https://$cas_host>$cas_host</a></div>";
 			echo "<div class=spaceUnder><span></span> ==> Si ce n'est pas le cas, changez la configuration de cas_config.php</div>";
 			
-			echo "<div><span>💭</span> Vérifiez que votre serveur à bien l'autorisation de se connecter au CAS : <a href=/services/doAuth.php?href=https://".$_SERVER['HTTP_HOST'].$Config->base_path.">Authentifiation</a></div>";
+			echo "<div><span>💭</span> Vérifiez que votre serveur à bien l'autorisation de se connecter au CAS : <a href=doAuth.php?href=https://".$_SERVER['HTTP_HOST'].$base_path.">Authentifiation</a></div>";
 			echo "<div class=spaceUnder><span></span> ==> Si ce n'est pas le cas, demandez l'autorisation à votre service informatique.</div>";
 			echo "<a href=diagnostic2.php?-no-sw>La suite sur la deuxième page.</a>";
 		} else {

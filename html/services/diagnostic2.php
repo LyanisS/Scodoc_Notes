@@ -56,6 +56,8 @@
 	<h2>CAS</h2>
 	<?php
 		$path = realpath(dirname(__FILE__) . '/../..');
+		include_once "$path/includes/base_path.php";
+		base_path("services/diagnostic2.php");
 		error_reporting(E_ALL);
 		ini_set('display_errors', '1');
 	/********************/
@@ -70,7 +72,7 @@
 		require_once $path . '/config/cas_config.php';
 
 		// Initialize phpCAS
-		$client_service_name = "https://" . $_SERVER['HTTP_HOST'] . $Config->base_path;
+		$client_service_name = "https://" . $_SERVER['HTTP_HOST'] . $base_path;
 		phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context, $client_service_name);
 		if($cas_server_ca_cert_path != '') {
 			phpCAS::setCasServerCACert($cas_server_ca_cert_path);
@@ -83,7 +85,7 @@
 			echo '<b>'.phpCAS::getUser().'</b>';
 
 		}else{
-			echo "<b>*** Vous n'êtes pas authentifié ***</b> => <a href=../services/doAuth.php?href=https://".$client_service_name.">Authentification</a><br><br>";
+			echo "<b>*** Vous n'êtes pas authentifié ***</b> => <a href=doAuth.php?href=https://".$client_service_name.">Authentification</a><br><br>";
 		}
 
 		echo '<br><br>Pour plus de tests sur le CAS, allez sur cette page <a href="../code_test/testCAS.php?-no-sw">Test CAS</a><br><br>';

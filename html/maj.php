@@ -1,3 +1,8 @@
+<?php
+$path = realpath(dirname(__FILE__) . '/..');
+include_once "$path/includes/base_path.php";
+base_path("maj.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -527,7 +532,6 @@ chmod 744 installOrUpdate.sh
 	</main>
 	<script src="assets/js/theme.js"></script>
 	<?php 
-		$path = realpath(dirname(__FILE__) . '/..');
 		include "$path/config/analytics.php";
 	?>
 </body>

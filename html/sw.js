@@ -6,7 +6,7 @@ self.addEventListener("install", function (event) {
 		caches.open(version + 'fundamentals')
 			.then(function (cache) {
 				return cache.addAll([
-					BASE_PATH,
+					'/',
 					'manifest.json',
 					'assets/js/releve-but.js',
 					'assets/js/releve-dut.js'

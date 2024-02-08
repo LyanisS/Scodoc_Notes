@@ -1,5 +1,7 @@
 <?php 
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("absences/gestion.php");
 	require_once "$path/includes/default_config.php";
 	require_once "$path/includes/analytics.class.php";
 	Analytics::add('gestionAbsences');
@@ -10,7 +12,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justif. absences</title>
-    <script>var BASE_PATH = "<?= $Config->base_path ?>";</script>
     <style>
         <?php include realpath(dirname(__FILE__) . "/..") . "/assets/styles/global.css"?>
         header{

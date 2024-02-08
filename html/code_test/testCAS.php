@@ -12,6 +12,8 @@ Authentification en cours ...
 	ini_set('display_errors', '1');
 
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("code_test/testCAS.php");
 	require_once $path.'/includes/default_config.php';
 	
 	/* CAS config */
@@ -21,7 +23,7 @@ Authentification en cours ...
 	phpCAS::setLogger();
 	phpCAS::setVerbose(true);
 	
-	$client_service_name = "https://$_SERVER[HTTP_HOST]";
+	$client_service_name = "https://$_SERVER[HTTP_HOST]$base_path";
 	phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context, $client_service_name);
 	phpCAS::setNoCasServerValidation();
 

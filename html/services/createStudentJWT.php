@@ -6,6 +6,8 @@
 /***************************************/
 
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("services/createStudentJWT.php");
 	
 	include_once "$path/includes/default_config.php";
 
@@ -41,7 +43,7 @@
 		'exp' => time() + $duree_de_validite
 	];
 
-	$root_url = (isset($_SERVER["https"]) ? "https://" : "http://" ). $_SERVER["HTTP_HOST"] . $Config->base_path;
+	$root_url = (isset($_SERVER["https"]) ? "https://" : "http://" ). $_SERVER["HTTP_HOST"] . $base_path;
 	$token_url = $root_url."?token=".JWT::encode($payload, $Config->JWT_key);
 ?>
 

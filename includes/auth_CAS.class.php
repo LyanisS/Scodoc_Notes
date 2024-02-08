@@ -17,6 +17,7 @@
 	/* Authentification par le CAS */
 	/*******************************/
 		public static function defaultAuth(){
+			global $base_path;
 			$path = realpath(dirname(__FILE__) . '/..');
 
 			require_once $path . '/lib/CAS/CAS.php';
@@ -43,7 +44,7 @@
 				exit(
 					json_encode(
 						[
-							'redirect' => '/services/doAuth.php'
+							'redirect' => $base_path . 'services/doAuth.php'
 						]
 					)
 				);
@@ -55,14 +56,16 @@
 	// Contenu de la page html/services/doAuth.php
 	// Cette page permet de mettre en place le cookie d'authentification
 		public static function doAuth(){
+			global $base_path;
 			$path = realpath(dirname(__FILE__) . '/..');
 
 			require_once $path . '/lib/CAS/CAS.php';
 			require_once $path . '/config/cas_config.php';
-			$client_service_name = "https://$_SERVER[HTTP_HOST]";
+			$client_service_name = "https://$_SERVER[HTTP_HOST]$base_path";
 
 			// Initialize phpCAS
 			phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context, $client_service_name);
+			phpCAS::setFixedServiceURL($client_service_name . "services/doAuth.php?href=" . $_GET['href']);
 				
 			if($cas_server_ca_cert_path != '') {
 				phpCAS::setCasServerCACert($cas_server_ca_cert_path);
@@ -92,11 +95,12 @@
 	// Contenu de la page html/logout.php
 	// Permet de supprimer l'authentification de l'utilisateur
 		public static function logout(){
+			global $base_path;
 			$_SESSION = array();
 			$path = realpath(dirname(__FILE__) . '/..');
 			require_once $path . '/lib/CAS/CAS.php';
 			require_once $path . '/config/cas_config.php';
-			$client_service_name = "https://$_SERVER[HTTP_HOST]";
+			$client_service_name = "https://$_SERVER[HTTP_HOST]$base_path";
 
 			phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context, $client_service_name);
 			phpCAS::logoutWithRedirectService('');

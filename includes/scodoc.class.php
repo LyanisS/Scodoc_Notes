@@ -13,6 +13,7 @@ class Scodoc{
 	public function __construct(){
 		global $Config;
 		global $path;
+		global $base_path;
 
 		$this->tokenPath = "$path/includes/token.txt";
 		$this->ch = curl_init();
@@ -23,7 +24,7 @@ class Scodoc{
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_SSL_VERIFYPEER => false,
 			CURLOPT_SSL_VERIFYHOST => false,
-			CURLOPT_REFERER => $_SERVER['SERVER_NAME'] . '/?passerelle=' . $Config->passerelle_version
+			CURLOPT_REFERER => $_SERVER['SERVER_NAME'] . $base_path . '?passerelle=' . $Config->passerelle_version
 		);
 		curl_setopt_array($this->ch, $options);
 

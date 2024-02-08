@@ -4,6 +4,8 @@
 	header('Access-Control-Allow-Headers: Authorization');
 	
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("services/getOthersData.php");
 	$dir = $path . '/data/analytics/';
 	$file = $dir . 'othersData.json';
 	

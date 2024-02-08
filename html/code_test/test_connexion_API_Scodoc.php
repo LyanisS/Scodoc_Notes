@@ -2,6 +2,8 @@
 	header('Content-type:application/json');
 
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("code_test/test_connexion_API_Scodoc.php");
 	include_once "$path/includes/default_config.php";
 
 	error_reporting(E_ALL);
@@ -15,6 +17,7 @@
 		/***********************************************************/
 		public function __construct(){
 			global $Config;
+			global $base_path;
 			$this->ch = curl_init();
 
 			/*$fp = fopen(dirname(__FILE__).'/errorlog.txt', 'w');
@@ -32,7 +35,7 @@
 				CURLOPT_POST => true,
 				CURLOPT_URL => $Config->scodoc_url.'/api/tokens',
 				CURLOPT_USERPWD => $Config->scodoc_login . ':' . $Config->scodoc_psw,
-				CURLOPT_REFERER => $_SERVER['SERVER_NAME'] . '/?passerelle=' . $Config->passerelle_version
+				CURLOPT_REFERER => $_SERVER['SERVER_NAME'] . $base_path . '/?passerelle=' . $Config->passerelle_version
 			);
 			curl_setopt_array($this->ch, $options);
 			$token = json_decode(curl_exec($this->ch), false)->token;

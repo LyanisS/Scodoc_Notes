@@ -5,6 +5,8 @@
 /***************************************/
 
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("services/createJWT.php");
 
 	include_once "$path/includes/default_config.php";
 	include_once "$path/includes/user.class.php";
@@ -22,7 +24,7 @@
 	include $path . '/lib/JWT/JWT.php';
 
 	$exp = time() + 7 * 3600 * 24 ; // today + 7 days
-    $root_url = (isset($_SERVER["https"]) ? "https://" : "http://" ). $_SERVER["HTTP_HOST"] . $Config->base_path;
+    $root_url = (isset($_SERVER["https"]) ? "https://" : "http://" ). $_SERVER["HTTP_HOST"] . $base_path;
 	$payload = [
 		'id' => 'sebastien.lehmann@uha.fr', // nip, ou idCAS, si la personne n'a pas de nip
 		'idCAS' => 'sebastien.lehmann@uha.fr',

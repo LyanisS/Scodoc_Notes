@@ -1,5 +1,7 @@
 <?php
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("services/bulletin_PDF.php");
 	include_once "$path/includes/default_config.php";
 	include_once "$path/includes/annuaire.class.php";
 	require_once "$path/includes/".$Config->service_data_class;		// Class service_data - typiquement Scodoc

@@ -1,3 +1,8 @@
+<?php
+	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("services/analytics.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -107,7 +112,6 @@
 	<script>
 
 		<?php
-			$path = realpath(dirname(__FILE__) . '/../..');
 			include "$path/includes/clientIO.php";
 		?>
 

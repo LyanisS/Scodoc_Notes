@@ -16,6 +16,8 @@
 	ini_set('display_errors', '1');*/
 
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("services/data.php");
 
 	require_once "$path/includes/default_config.php";
 	require_once "$path/includes/admin.class.php";

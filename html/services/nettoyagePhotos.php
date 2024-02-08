@@ -1,5 +1,7 @@
 <?php 
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("services/nettoyagePhotos.php");
 	include "$path/includes/default_config.php";
 ?>
 <!DOCTYPE html>

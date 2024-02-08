@@ -4,16 +4,16 @@
 	<nav>
 		<svg onclick="this.parentElement.parentElement.classList.toggle('ouvert')" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="var(--primaire-contenu)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
 
-		<a class="nav" id="notes" href="<?= $Config->base_path ?>">Notes</a>
-		<a class="nav" id="documents" href="<?= $Config->base_path ?>services/studentsLists.php">Documents</a>
+		<a class="nav" id="notes" href="<?= $base_path ?? '/' ?>">Notes</a>
+		<a class="nav" id="documents" href="<?= $base_path ?? '/' ?>services/studentsLists.php">Documents</a>
 
-		<a class="nav" id="absences" href="<?= $Config->base_path ?>absences/">Absences</a>
-		<a class="nav" id="gestion" href="<?= $Config->base_path ?>absences/gestion.php">Stats / Justif</a>
+		<a class="nav" id="absences" href="<?= $base_path ?? '/' ?>absences/">Absences</a>
+		<a class="nav" id="gestion" href="<?= $base_path ?? '/' ?>absences/gestion.php">Stats / Justif</a>
 
-		<a class="nav" id="admin" href="<?= $Config->base_path ?>admin/">Comptes</a>
-		<a class="nav" id="config" href="<?= $Config->base_path ?>admin/config.php">Config</a>
+		<a class="nav" id="admin" href="<?= $base_path ?? '/' ?>admin/">Comptes</a>
+		<a class="nav" id="config" href="<?= $base_path ?? '/' ?>admin/config.php">Config</a>
 
-		<a href=<?= $Config->base_path ?>logout.php>Déconnexion</a>
+		<a href=<?= $base_path ?? '/' ?>logout.php>Déconnexion</a>
 	</nav>
 
 	<div class="theme" onclick="toggleTheme()">

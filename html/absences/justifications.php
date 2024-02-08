@@ -1,5 +1,7 @@
 <?php 
 	$path = realpath(dirname(__FILE__) . '/../..');
+	include_once "$path/includes/base_path.php";
+	base_path("absences/justifications.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -7,7 +9,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absences</title>
-    <script>var BASE_PATH = "<?= $Config->base_path ?>";</script>
     <style>
         <?php include realpath(dirname(__FILE__) . "/..") . "/assets/styles/global.css"?>
 		/**************/

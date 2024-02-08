@@ -20,7 +20,7 @@ function fetchData(query){
 	let token = (window.location.search.match(/token=([a-zA-Z0-9._-]+)/)?.[1] || ""); // Récupération d'un token GET pour le passer au service
 
 	return fetch(
-		"<?= $Config->base_path ?>services/data.php?q="+query, 
+		"<?= $base_path ?? '/' ?>services/data.php?q="+query, 
 		{
 			method: "post",
 			headers: {
