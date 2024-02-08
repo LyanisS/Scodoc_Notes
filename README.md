@@ -166,6 +166,37 @@ Il est possible de s'authentifier de manière forcée en utilisant les jetons JW
 Ces jetons peuvent être créés dans le fichier /html/services/createJWT.php (à modifier).  
 Ces jetons sont notamment utiles au début pour bypasser le CAS pour des premiers tests.  
 
+### Option - configuration du serveur web
+Il est possible d'installer la passerelle dans un sous-répertoire.  
+Voici des exemples de configuration pour Apache et Nginx :  
+
+```apache
+Alias /notes "/srv/http/notes/html"
+
+<Directory "/srv/http/notes/html">
+    AllowOverride None
+    Options None
+    Require all granted
+</Directory>
+```
+
+```nginx
+ location /notes {
+    alias /var/www/notes/html;
+    try_files $uri $uri/ =404;
+
+    location ~ \.php$ {
+        root /var/www/notes/html;
+        rewrite ^/notes/(.*) /$1 break;
+        try_files $uri =404;
+        include /etc/nginx/fastcgi_params;
+        fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+}
+```
+
 ### Option - configuration du LDAP
 Complétez les paramètres LDAP dans /config/config.php  
 La mise à jour forcée du LDAP (pour les tests) se fait en exécutant le fichier /includes/CmdUpdateLists.php en CLI.  
